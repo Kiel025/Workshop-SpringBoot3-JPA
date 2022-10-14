@@ -1,8 +1,10 @@
 package me.udemy.course.config;
 
+import me.udemy.course.entities.Category;
 import me.udemy.course.entities.Order;
 import me.udemy.course.entities.User;
 import me.udemy.course.entities.enums.OrderStatus;
+import me.udemy.course.repositories.CategoryRepository;
 import me.udemy.course.repositories.OrderRepository;
 import me.udemy.course.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +25,16 @@ public class TestConfig implements CommandLineRunner {
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     @Override
     public void run(String... args) throws Exception {
-       
+
+        Category cat1 = new Category(null, "Electronics");
+        Category cat2 = new Category(null, "Books");
+        Category cat3 = new Category(null, "Computers");
+
         User u1 = new User(null, "Ezequiel Sousa", "kiel02505@gmail.com", "981123600", "123456");
         User u2 = new User(null, "Ezequiel Santos", "kielddev@gmail.com", "999554767", "12345678");
 
@@ -35,5 +44,6 @@ public class TestConfig implements CommandLineRunner {
 
         userRepository.saveAll(Arrays.asList(u1, u2));
         orderRepository.saveAll(Arrays.asList(o1, o2, o3));
+        categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
     }
 }
