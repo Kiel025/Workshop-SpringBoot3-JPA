@@ -5,7 +5,7 @@
 
 ## Sobre o projeto
 
-Esse workshop é uma aplicação backend web construída durante o curso de Java completo do **Nélio Alves**, com outras features implementadas por mim.
+Esse workshop é uma aplicação backend web construída durante o curso de Java completo do **Nélio Alves**.
 
 A aplicação consiste em um e-commerce onde é possível gerenciar usuários e pedidos dos produtos.
 
